@@ -1,0 +1,42 @@
+<!doctype html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Chart.js Example</title>
+    <style>
+        table, td, th {
+            border: 2px solid gray;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+            {% for column in columns %}
+                <th>{{column}}</th>
+            {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+        {% for d in data.value %}
+            <tr>
+            {% for column in columns %}
+                {% if d.fields[column] is mapping %}
+                    <td>{{d.fields[column]['assignedTo']}}</td>
+                {% else %}
+                    <td>{{d.fields[column]}}</td>
+                {% endif %}
+            {% endfor %}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <canvas id="myChart" width="400" height="400"></canvas>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.4.1/dist/chart.min.js"></script>
+</body>

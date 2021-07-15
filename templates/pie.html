@@ -1,0 +1,21 @@
+<!doctype html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Chart.js Example</title>
+    <script type="text/javascript">
+        var labels = {{ columns|tojson }}
+        var values = {{ count|tojson }}
+    </script>
+</head>
+
+<body>
+
+    <div>
+        <canvas id="myChart" width="200" height="200"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.4.1/dist/chart.min.js"></script>
+
+    <script src="static/pie.js"></script>
+</body>
