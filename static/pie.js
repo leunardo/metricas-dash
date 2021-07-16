@@ -33,7 +33,7 @@ const config = {
         },
         title: {
           display: true,
-          text: 'Chart.js Pie Chart'
+          text: 'Count de WorkItems por Type'
         }
       }
     },
